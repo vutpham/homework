@@ -61,5 +61,29 @@ end
 # As always, test your code thoroughly to make sure all properties of maps are enforced.
 
 class Map
-  
+  def initialize
+    @ivar = []
+  end
+
+  def assign(key, value)
+    @ivar << [key, value]
+  end
+
+  def lookup(key)
+    @ivar.each do |array|
+      return array if array[0] == key
+    end
+    nil
+  end
+
+  def remove(key)
+    @ivar.each do |array|
+      return @ivar.delete(array) if array[0] == key
+    end
+    nil
+  end
+
+  def show
+    @ivar
+  end
 end
