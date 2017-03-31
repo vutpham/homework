@@ -66,7 +66,7 @@ class Map
   end
 
   def assign(key, value)
-    @ivar << [key, value]
+    @ivar << [key, value] unless @ivar.any? { |block| block[0] == key }
   end
 
   def lookup(key)
