@@ -162,7 +162,7 @@ def merge(arr1, arr2)
   sorted
 end
 
-# p merge_sort([5,3,9,1,0])
+p merge_sort([5,3,9,1,0])
 
 def greedy_make_change(amount, coins = [25, 10, 5, 1])
   return [0] if amount == 0
