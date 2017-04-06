@@ -7,11 +7,11 @@ Instructions: implement all of the pending specs (the `it` statements without bl
 
 describe Dessert do
   let(:chef) { double("chef", name: "Garry") }
-  let(:cake) { Dessert.new('cake', 4, chef)}
+  let(:cake) { Dessert.new('cakes', 4, chef)}
 
   describe "#initialize" do
     it "sets a type" do
-      expect(cake.type).to eq('cake')
+      expect(cake.type).to eq('cakes')
     end
 
     it "sets a quantity" do
@@ -23,7 +23,7 @@ describe Dessert do
     end
 
     it "raises an argument error when given a non-integer quantity" do
-      expect(Dessert.new('cake', 'a few', 4)).to raise_error(ArgumentError)
+      expect { Dessert.new('cake', 'a few', 4) }.to raise_error(ArgumentError)
     end
   end
 
@@ -56,19 +56,19 @@ describe Dessert do
     end
 
     it "raises an error if the amount is greater than the quantity"
-      # expect { cake.eat(4)}.to raise_error("not enough left!") ## Raises an error, why?
+      # expect { cake.eat(1) }.to raise_error("not enough left!") ## Raises an error, why?
   end
 
   describe "#serve" do
     it "contains the titleized version of the chef's name" do
-      allow(chef).to_receive(:titleized).and_return("Chef Garry the Great Baker")
-      expect(chef.serve).to eq("Chef Garry the Great Baker has made #{quantity} cakes!")
+      allow(chef).to_receive(:titleize).and_return("Chef Garry the Great Baker")
+      expect(cake.serve).to eq("Chef Garry the Great Baker has made 4 cake!".titleize)
     end
   end
 
   describe "#make_more" do
     it "calls bake on the dessert's chef with the dessert passed in" do
-      expect(chef).to_receive(bake).with(cake)
+      expect(chef).to_receive(:bake).with(cake)
       cake.make_more
     end
   end
