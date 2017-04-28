@@ -1,0 +1,37 @@
+
+<% if action == 'PATCH' %>
+  <% action_url = track_url(track) %>
+<% else %>
+  <% action_url = tracks_url %>
+<% end %>
+
+<form action= <%= action_url %> method="POST">
+  <% if action == 'PATCH' %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <%= auth_token %>
+  <input type="hidden" name="track[album_id]" value=<%= album %>>
+
+  <label for="title">Title</label>
+  <input id="title" type="text" name="track[title]" value = "<%= track.title %>">
+  <br>
+  <label for="release">Style</label>
+  <br>
+  <input id="release" type="radio" name="track[release]" value = "regular" <% track.release == "regular" ? "checked" : "" %> >Regular
+  <br>
+  <input id="release" type="radio" name="track[release]" value = "bonus" <% track.release == "bonus" ? "checked" : "" %> >Bonus
+
+  <br>
+  <label for="lyrics">Lyrics</label>
+  <textarea id="lyrics" name="track[lyrics]" rows="8" cols="80"> <%= track.lyrics %>  </textarea>
+
+  <br>
+
+
+  <% if action == 'POST' %>
+    <input type="submit" value="Add Track">
+  <% else %>
+    <input type="submit" value="Update Track">
+  <% end %>
+
+</form>

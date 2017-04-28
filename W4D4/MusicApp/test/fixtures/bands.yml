@@ -1,11 +1,29 @@
+# == Schema Information
+#
+# Table name: bands
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  index: MyString
+  create: MyString
+  new: MyString
+  edit: MyString
+  show: MyString
+  update: MyString
+  destroy: MyString
+
+two:
+  index: MyString
+  create: MyString
+  new: MyString
+  edit: MyString
+  show: MyString
+  update: MyString
+  destroy: MyString

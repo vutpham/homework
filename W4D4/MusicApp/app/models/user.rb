@@ -1,25 +1,43 @@
-require 'bcrypt'
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 
 class User < ApplicationRecord
-  include BCrypt
+  attr_reader :password
 
   validates :email, :password_digest, :session_token, presence: true
-  validates :email, :session_token, uniqueness: true
+  validates :password, length: { minimum: 6 }, allow_nil: true
+  validates :email, uniqueness: true
+
   after_initialize :ensure_session_token
 
-
   def self.generate_session_token
-    SecureRandom.urlsafe_base64(16)
+    SecureRandom.urlsafe_base64(32)
   end
 
-  def reset_session_token!
-    session_token = User.generate_session_token
-    self.update(session_token: session_token)
-    session_token
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
+    if user
+      return user if user.is_password? password
+    end
+    nil
   end
 
   def ensure_session_token
     self.session_token ||= User.generate_session_token
+  end
+
+  def reset_session_token!
+    self.session_token = User.generate_session_token
+    self.save
   end
 
   def password=(password)
@@ -31,13 +49,6 @@ class User < ApplicationRecord
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
-  def self.find_by_credentials(email, password)
-    user = User.find_by(email: email)
-    if user.nil?
-      flash[:errors] = "Invalid Email or Password"
-    elsif user.is_password?(password)
-      return user
-    end
-  end
+  has_many :notes
 
 end

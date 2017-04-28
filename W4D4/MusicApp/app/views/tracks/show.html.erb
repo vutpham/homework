@@ -1,0 +1,17 @@
+<h1> <%= @track.title %></h1>
+
+<h3>Lyrics</h3>
+<p> <%= @track.lyrics %> </p>
+<h3>Comments</h3>
+<ul>
+  <% @track.notes.each do |note| %>
+    <li> <%= note.body %></li>
+  <% end %>
+</ul>
+<form action= <%= user_notes_url(current_user) %> method="post">
+  <%= auth_token %>
+  <input type="hidden" name="note[track_id]" value=<%= @track.id %>>
+  <textarea name="note[body]" rows="8" cols="80"></textarea>
+  <input type="submit">
+</form>
+<%= link_to "Back to Album", album_url(@track.album_id) %>

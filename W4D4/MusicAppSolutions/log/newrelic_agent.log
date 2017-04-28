@@ -161,3 +161,20 @@
 [2017-03-27 14:59:42 -0400 hilbert.local (85036)] ERROR : Invalid license key, please contact support@newrelic.com
 [2017-03-27 14:59:42 -0400 hilbert.local (85036)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
 [2017-03-27 17:27:44 -0400 hilbert.local (85036)] INFO : Starting Agent shutdown
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Starting the New Relic agent version 4.0.0.332 in "development" environment.
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] WARN : No configuration file found. Working directory = /Users/vu.pham/Dropbox/app-academy/homeworks/W4D4/MusicAppSolutions
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] WARN : Looked in these locations (based on defaults): /Users/vu.pham/Dropbox/app-academy/homeworks/W4D4/MusicAppSolutions/config/newrelic.yml, /Users/vu.pham/Dropbox/app-academy/homeworks/W4D4/MusicAppSolutions/newrelic.yml, /Users/vu.pham/Dropbox/app-academy/homeworks/W4D4/MusicAppSolutions/config/newrelic.yml, /Users/vu.pham/Dropbox/app-academy/homeworks/W4D4/MusicAppSolutions/newrelic.yml, /Users/vu.pham/.newrelic/newrelic.yml, /Users/vu.pham/newrelic.yml
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Environment: development
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : No known dispatcher detected.
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Application: development
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Installing ActiveJob instrumentation
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Installing Net instrumentation
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Installing Rails 4 Controller instrumentation
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Installing Rails 4 view instrumentation
+[2017-04-20 23:11:01 -0700 Vus-MacBook-Pro.local (41988)] INFO : Finished instrumentation

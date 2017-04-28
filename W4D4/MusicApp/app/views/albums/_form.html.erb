@@ -1,0 +1,36 @@
+
+<% if action == 'PATCH' %>
+  <% action_url = album_url(album) %>
+<% else %>
+  <% action_url = albums_url %>
+<% end %>
+
+<form action= <%= action_url %> method="POST">
+  <% if action == 'PATCH' %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <%= auth_token %>
+  <input type="hidden" name="album[band_id]" value=<%= band %>>
+
+  <label for="title">Title</label>
+  <input id="title" type="text" name="album[title]" value = "<%= album.title %>">
+  <br>
+
+
+  <br>
+  <label for="style1">Studio</label>
+  <input id="style1" type="radio" name="album[style]" value = "studio" <% album.style == "studio" ? "checked" : "" %> >
+  <br>
+  <label for="style2">Live</label>
+  <input id="style2" type="radio" name="album[style]" value = "live" <% album.style == "live" ? "checked" : "" %> >
+
+  <br>
+
+
+  <% if action == 'POST' %>
+    <input type="submit" value="Add Album">
+  <% else %>
+    <input type="submit" value="Update Album">
+  <% end %>
+
+</form>

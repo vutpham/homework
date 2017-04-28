@@ -1,9 +1,15 @@
-<h1> Please log in </h1>
-<form action= <%= session_url %> method="post">
-  <input type="hidden" name= "authenticity_token" value= <%= form_authenticity_token  %> >
-  <label for="email">Email:</label>
-  <input id="email" type="text" name="user[email]"><br>
-  <label for="password">Password: </label>
-  <input id="password" type="password" name="user[password]"><br>
-  <p> <input type="submit" value="Submit"> </p>
+<h1>Sign In!</h1>
+
+
+<form action="/sessions" method="POST">
+  <%= auth_token %>
+
+  <label for="email">Email</label>
+  <input id="email" type="text" name="user[email]" value = <%= @user.email %>>
+  <br>
+  <label for="password">Password</label>
+  <input id="password" type="password" name="user[password]">
+  <br>
+
+  <input type="submit" name="Sign In">
 </form>
