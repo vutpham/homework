@@ -65,7 +65,7 @@ function madLib(verb, adjective, noun) {
   return `We shall ${verb.toUpperCase()} the ${adjective.toUpperCase()} ${noun.toUpperCase()}.`;
 }
 
-// console.log(madLib('eat', 'delicious', 'food'));
+console.log(madLib('eat', 'delicious', 'food'));
 
 //isSubstring
 
@@ -85,15 +85,15 @@ function isSubstring(searchString, subString) {
 function fizzBuzz(array) {
   let result = [];
 
-  array.forEach(el => {
-    if (el % 3 === 0 ^ el % 5 === 0){
-      result.push(el);
-    };
-  });
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] % 3 ^ array[i] % 5) {
+      result.push(array[i]);
+    }
+  }
   return result;
 }
 
-// console.log(fizzBuzz([1,2,3,15]));
+console.log(fizzBuzz([1,2,3,15]));
 
 function isPrime(number) {
   for (i = 2; i < number; i++) {

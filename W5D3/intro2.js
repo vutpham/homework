@@ -3,9 +3,9 @@ function titleize(names, callback) {
   callback(titleized)
 }
 
-// titleize(['Allen', 'Yong', 'Vu'], (names) => {
-//   names.forEach( name => console.log(name));
-// })
+titleize(['Allen', 'Yong', 'Vu'], (names) => {
+  names.forEach( name => console.log(name));
+})
 
 function Elephant(name, height, tricks) {
   this.name = name;
