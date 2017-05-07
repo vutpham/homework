@@ -1,17 +1,31 @@
 html, body, section, div, nav, ul, li, h1{
-  padding: 0;
   margin: 0;
+  padding: 0;
   border: 0;
-  font: inherit;
-  font-size: inherit;
-  background: transparent;
+  outline: 0;
+  font: sans-serif;
   color: inherit;
-  list-style-type: none;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+  list-style: none;
 }
 
 body {
   font-size: 14px;
   font-family: 'PT Mono', monospace;
+  background-image: url(http://wallpapercave.com/wp/aZKICPt.jpg);
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+  font-size: 28px;
+  font-weight: 700;
+  margin: 20px 10px 10px 20px;
 }
 
 .clock {
@@ -45,6 +59,7 @@ body {
 .weather:hover {
 
 }
+
 .main {
   display: flex;
   flex-direction: column;
@@ -52,5 +67,5 @@ body {
 }
 
 .main > ul > li {
-  margin: 10px;
+  margin: 50px;
 }

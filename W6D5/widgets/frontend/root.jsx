@@ -1,7 +1,7 @@
 import React from 'react';
 import Clock from './clock';
 import Weather from './weather';
-import Autocomplete from './autocomplete';
+
 
 class Root extends React.Component{
   constructor(props){
@@ -14,7 +14,6 @@ class Root extends React.Component{
         <ul>
           <li><Clock /></li>
           <li><Weather /></li>
-          <li><Autcomplete /></li>
         </ul>
       </div>
     );

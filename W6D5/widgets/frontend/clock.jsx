@@ -20,13 +20,20 @@ class Clock extends React.Component{
   }
 
   render(){
+
+    let hours = this.state.time.getHours();
+    let minutes = this.state.time.getMinutes();
+    let seconds = this.state.time.getSeconds();
+
+    hours = (hours < 10) ? `0${hours}` : hours;
+    minutes = (minutes < 10) ? `0${minutes}` : minutes;
+    seconds = (seconds < 10) ? `0${seconds}` : seconds;
+
     return (
       <section className="clock">
         <ul className="time">
           <li>Time</li>
-          <li>[{this.state.time.getHours()}:
-          {this.state.time.getMinutes()}:
-          {this.state.time.getSeconds()}]</li>
+          <li>{hours}:{minutes}:{seconds} PDT</li>
         </ul>
 
         <ul className="date">
