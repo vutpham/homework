@@ -5,6 +5,7 @@ import App from './components/app';
 
 import configureStore from './store/store';
 import { receiveTodo, receiveTodos } from './actions/todo_actions';
+import { allTodos } from './reducers/selectors';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -17,5 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.receiveTodo = receiveTodo;
   window.receiveTodos = receiveTodos;
+  window.allTodos = allTodos;
 	ReactDOM.render(<Root store={ store } />, root);
 });
